@@ -9,13 +9,12 @@ function Footer() {
         height={14}
         width={14}
         alt="Safeguard"
-        className='fill-gray-400'
       />
       <div className='text-xs'>Pagamento 100% seguro via:</div>
       <div className='relative -mt-1'>
         <Image
           priority
-          src="/woovi.svg"
+          src="/wooviGray.svg"
           height={60}
           width={60}
           alt="Woovi logo"
