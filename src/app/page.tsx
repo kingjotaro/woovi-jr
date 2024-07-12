@@ -11,7 +11,7 @@ export default function Home() {
       <Header></Header>
       
       <HeaderDynamic></HeaderDynamic>
-      <Pix></Pix>
+      
       <PixList></PixList>
 
     <Footer></Footer>
