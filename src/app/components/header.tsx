@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function header() {
   return (
-    <div>
+    <div className='mt-8'>
          <Image
         priority
         src="/wooviGreen.svg"

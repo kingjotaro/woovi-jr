@@ -2,7 +2,7 @@ import Image from 'next/image';
 
 function Footer() {
   return (
-    <div className='flex flex-row gap-1 items-center text-gray-400'>
+    <div className='flex flex-row gap-1 items-center text-gray-400 mb-4'>
       <Image
         priority
         src="/safe.svg"

@@ -26,7 +26,7 @@ function Pix() {
       >
         {isSelected && '✓'}
       </button>
-        <div className="bg-blue-900 text-white text-sm font-semibold rounded-md px-4 py-2 mt-2">
+        <div className="bg-blue-900 text-white text-sm font-semibold rounded-md px-4 py-2 mt-2 relative cut-corner ">
         🤑 R$ 1080,00 de volta no seu Pix na hora
         </div>
       </div>

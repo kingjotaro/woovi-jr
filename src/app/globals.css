@@ -8,3 +8,19 @@
 body {
   font-family: 'Nunito', sans-serif;
 }
+
+@layer components {
+  .cut-corner::after {
+    content: '';
+    @apply absolute top-[18px] -right-5;
+    width: 0;
+    height: 0;
+    border-top: 25px solid transparent;
+    border-left: 25px solid;
+    border-left-color: theme('colors.white');
+    transform: rotate(45deg);
+    border-bottom-left-radius: 5px;
+    border-top-right-radius: 10px;
+    transform-origin: top right;
+  }
+}
