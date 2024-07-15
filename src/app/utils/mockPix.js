@@ -42,8 +42,7 @@ function calculateProgressiveDiscount(initialAmount, months, monthlyDiscountRate
 
         results.unshift(installment);
     }
-
     return results;
 }
 
-module.exports = calculateProgressiveDiscount;
+export default calculateProgressiveDiscount;

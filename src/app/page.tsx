@@ -2,8 +2,7 @@
 import Footer from "./components/footer";
 import Header from "./components/header";
 import HeaderDynamic from "./components/headerDynamic";
-import Pix from "./components/pix";
-import PixList from "./components/pixListInstallment";
+import PixList from "./components/pixControlerArea";
 
 export default function Home() {
   return (

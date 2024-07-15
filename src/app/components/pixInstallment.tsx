@@ -1,4 +1,8 @@
-function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems}: {
+import { Dispatch, SetStateAction } from "react";
+import FixedNavigationButton from "./navigatorButton";
+
+
+function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, nextPage, setNextPage}: {
 
   title: string,
   amount: string,
@@ -7,6 +11,9 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems}: 
   onClick: () => void;
   index: number,
   totalItems: number,
+  nextPage: boolean,
+  setNextPage: Dispatch<SetStateAction<boolean>>,
+
 
 }) {
 
@@ -17,7 +24,10 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems}: 
  
 
   return (
-    <div className={`relative border p-4 shadow-lg ${borderColor} ${borderTop} ${borderBottom}`}>
+    <div>
+    <div className={`relative border p-4 shadow-lg ${borderColor} ${borderTop} ${borderBottom}`}
+    onClick={onClick}
+    >
       <div className="absolute top-0 left-4 transform -translate-y-1/2 bg-gray-300 h-6 w-28 rounded-full flex items-center justify-center font-bold text-sm">
         {title}
       </div>
@@ -27,13 +37,19 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems}: 
         <button
           className={`absolute top-4 right-1 w-6 h-6 rounded-full flex items-center justify-center text-white focus:outline-none ${isSelected ? 'bg-customGreen' : 'bg-gray-200'
             }`}
-          onClick={onClick}
+          
         >
           {isSelected && '✓'}
         </button>
+       
       </div>
+     
     </div>
-  );
+    <div className='flex flex-row justify-center mt-1 mb-2'>
+  
+     <FixedNavigationButton setNextPage={setNextPage} isVisible={isSelected}></FixedNavigationButton>
+    </div>
+     </div> );
 }
 
 export default PixItem;

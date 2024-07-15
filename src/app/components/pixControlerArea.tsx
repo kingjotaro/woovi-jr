@@ -1,23 +1,33 @@
 import PixItem from './pixInstallment';
-import calculateProgressiveDiscount from './mockPix'
+import calculateProgressiveDiscount from '../utils/mockPix'
 import Pix from './pix';
 import { useState } from 'react';
 
 function PixList() {
 
-    const [selectedItem, setSelectedItem] = useState(null);
+    const [selectedItem, setSelectedItem] = useState<string | null>(null);
+    const [nextPage, setNextPage] = useState(false)
+
 
     const totalDiscountRate = "3%";
     const monthlyDiscountRate = 0.03 / 12;
     const initialAmount = 36000;
     const month = 12;
-    const cashback = (initialAmount * 0.03).toFixed(2)
+    const cashback = Number((initialAmount * 0.03).toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+
+
 
     const pixData = calculateProgressiveDiscount(initialAmount, month, monthlyDiscountRate);
 
-    const handleSelect = (item: any) => {
-        setSelectedItem(item);
-    };
+    function handleSelect(item: string) {
+        if (selectedItem !== item) {
+            setSelectedItem(item);
+           
+        } else {
+            setSelectedItem(null);
+          
+        }
+    }
 
 
 
@@ -32,6 +42,8 @@ function PixList() {
                     cashbackAmount={`🤑 R$ ${cashback} de volta no seu Pix na hora`}
                     isSelected={selectedItem === "pix"}
                     onClick={() => handleSelect("pix")}
+                    nextPage={nextPage}
+                    setNextPage={setNextPage}
                 />
             </div>
 
@@ -46,6 +58,8 @@ function PixList() {
                     isSelected={selectedItem === `pixItem-${index + 1}`}
                     onClick={() => handleSelect(`pixItem-${index + 1}`)}
                     totalItems={pixData.length}
+                    nextPage={nextPage}
+                    setNextPage={setNextPage}
 
                 />
 
