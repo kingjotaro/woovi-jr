@@ -1,5 +1,4 @@
-import { Dispatch, SetStateAction } from "react";
-import FixedNavigationButton from "./nextButton";
+import FixedNavigationButton from "../paymentpix/nextButton";
 
 function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
   title: string,

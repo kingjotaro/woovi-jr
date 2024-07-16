@@ -14,8 +14,6 @@ function PixList() {
     const month = 12;
     const cashback = Number((initialAmount * 0.03).toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-
-
     const pixData = calculateProgressiveDiscount(initialAmount, month, monthlyDiscountRate);
 
     function handleSelect(item: string) {

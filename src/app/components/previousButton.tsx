@@ -8,25 +8,25 @@ function PreviousButton() {
   const pathname = usePathname()
 
   function next() {
-    if (pathname === "/pixpayment") {
+    if (pathname === "/paymentpix") {
       router.push('/');
     }
-    if (pathname === '/creditpayment') {
-      router.push('/pixpayment');
+    if (pathname === '/paymentwithcredit') {
+      router.push('/paymentpix');
     }
-  
-    
+
+
   }
 
   return (
-    
-      <button
-        className="border-customGreen left-4 p-2 w-24 h-10 bg-customGreen text-white rounded-full shadow-lg font-bold shadow-lg shadow-gren-500/50"
-        onClick={next}
-      >
-        Voltar
-      </button>
-    
+
+    <button
+      className="border-customGreen left-4 p-2 w-24 h-10 bg-customGreen text-white rounded-full shadow-lg font-bold shadow-lg shadow-gren-500/50"
+      onClick={next}
+    >
+      Voltar
+    </button>
+
   );
 }
 

@@ -9,10 +9,10 @@ function FixedNavigationButton({ isVisible}:  any ) {
 
   function next() {
     if (pathname === "/") {
-      router.push('/pixpayment');
+      router.push('/paymentpix');
     }
-    if (pathname === '/pixpayment') {
-      router.push('/creditpayment');
+    if (pathname === '/paymentpix') {
+      router.push('/paymentwithcredit');
     }
   
     
