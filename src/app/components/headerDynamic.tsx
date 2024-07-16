@@ -1,9 +1,9 @@
 import React from 'react';
 
-function HeaderDynamic() {
+function HeaderDynamic({header}: {header: string} ) {
   return (
-    <div className='text-center -mt- text-[24px] font-extrabold text-[#4D4D4D]'>
-      Contratar Rafael por um ano, como deseja pagar?
+    <div className='text-center text-md font-extrabold text-[#4D4D4D] '>
+       {header}
     </div>
   );
 }

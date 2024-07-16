@@ -1,15 +1,14 @@
 import { Dispatch, SetStateAction } from "react";
-import FixedNavigationButton from "./navigatorButton";
+import FixedNavigationButton from "./nextButton";
 
-function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, nextPage, setNextPage }: {
+function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
   title: string,
   amount: string,
   cashback: string,
   cashbackAmount: string,
   isSelected: boolean;
   onClick: () => void;
-  nextPage: boolean,
-  setNextPage: Dispatch<SetStateAction<boolean>>,
+
 }) {
 
 
@@ -40,7 +39,7 @@ function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, nex
     </div>
     <div className='flex flex-row justify-center mt-1 mb-2'>
   
-     <FixedNavigationButton setNextPage={setNextPage} isVisible={isSelected}></FixedNavigationButton>
+     <FixedNavigationButton isVisible={isSelected}></FixedNavigationButton>
     </div>
     </div>
   );

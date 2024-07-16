@@ -1,8 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
-import FixedNavigationButton from "./navigatorButton";
+import FixedNavigationButton from "./nextButton";
 
 
-function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, nextPage, setNextPage}: {
+function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems}: {
 
   title: string,
   amount: string,
@@ -11,8 +11,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, n
   onClick: () => void;
   index: number,
   totalItems: number,
-  nextPage: boolean,
-  setNextPage: Dispatch<SetStateAction<boolean>>,
+
 
 
 }) {
@@ -47,7 +46,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, n
     </div>
     <div className='flex flex-row justify-center mt-1 mb-2'>
   
-     <FixedNavigationButton setNextPage={setNextPage} isVisible={isSelected}></FixedNavigationButton>
+     <FixedNavigationButton isVisible={isSelected}></FixedNavigationButton>
     </div>
      </div> );
 }

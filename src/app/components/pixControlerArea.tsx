@@ -6,7 +6,6 @@ import { useState } from 'react';
 function PixList() {
 
     const [selectedItem, setSelectedItem] = useState<string | null>(null);
-    const [nextPage, setNextPage] = useState(false)
 
 
     const totalDiscountRate = "3%";
@@ -42,8 +41,6 @@ function PixList() {
                     cashbackAmount={`🤑 R$ ${cashback} de volta no seu Pix na hora`}
                     isSelected={selectedItem === "pix"}
                     onClick={() => handleSelect("pix")}
-                    nextPage={nextPage}
-                    setNextPage={setNextPage}
                 />
             </div>
 
@@ -58,8 +55,6 @@ function PixList() {
                     isSelected={selectedItem === `pixItem-${index + 1}`}
                     onClick={() => handleSelect(`pixItem-${index + 1}`)}
                     totalItems={pixData.length}
-                    nextPage={nextPage}
-                    setNextPage={setNextPage}
 
                 />
 
