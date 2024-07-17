@@ -2,7 +2,7 @@ import React from 'react';
 
 function PaymentForm() {
   return (
-    <div className="max-w-md mx-auto bg-white p-8 rounded-lg shadow-md">
+    <div className="max-w-md mx-auto bg-white p-8 rounded-lg">
       <h2 className="text-2xl font-bold mb-6">Pagamento</h2>
       <form>
         <div className="mb-4">

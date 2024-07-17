@@ -24,16 +24,17 @@ function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, cet
         {title}
       </div>
       <div className="flex flex-col items-start">
-        <div className="text-xl font-semibold">{amount}</div>
-        <div className="text-green-500 text-sm">{cashback}</div>
-        <button
+        <div className="text-xl font-bold text-neutral-600 ">{'1x '} <span className="font-normal">{`R$ ${amount}`}</span></div>
+        <div className="text-green-500 text-sm">  Ganhe <span className="font-bold">{cashback}</span> de Cashback
+</div>
+<button
           className={`absolute top-4 right-4 w-6 h-6 rounded-full flex items-center justify-center text-white focus:outline-none ${isSelected ? 'bg-customGreen' : 'bg-gray-200'}`}
           
         >
           {isSelected && '✓'}
         </button>
         <div className="bg-blue-900 text-white text-sm font-semibold rounded-md px-4 py-2 mt-2 relative cut-corner w-full">
-          {cashbackAmount}
+         🤑  <span className="font-bold">{`R$ ${cashbackAmount}`}</span> de volta no seu Pix na hora
         </div>
        
       </div>

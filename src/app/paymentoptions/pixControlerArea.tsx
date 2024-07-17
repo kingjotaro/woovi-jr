@@ -37,10 +37,11 @@ function PixList() {
                 <Pix
                     title={pixData[0].title}
                     amount={pixData[0].amount}
-                    cashback={`Ganhe ${totalDiscountRate} de Cashback`}
-                    cashbackAmount={`🤑 R$ ${cashback} de volta no seu Pix na hora`}
+                    cashback={totalDiscountRate}
+                    cashbackAmount={cashback}
                     isSelected={selectedItem === "pix"}
                     onClick={() => handleSelect("pix")}
+                    cet={pixData[0].cet}
                 />
             </div>
 

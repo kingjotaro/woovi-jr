@@ -6,13 +6,13 @@ import PixList from "./pixControlerArea";
 
 export default function Index() {
 
-   const headerPage = "João, como você quer pagar?"
+   const headerPage = "João como você deseja pagar?"
   return (
     <div className="flex min-h-screen flex-col items-center justify-between  min-w-screen">
       <Header></Header>
       
    
-   <HeaderDynamic header={headerPage}></HeaderDynamic>
+   <HeaderDynamic header={headerPage} headerUniquePix={""}></HeaderDynamic>
       
       <PixList></PixList>
 

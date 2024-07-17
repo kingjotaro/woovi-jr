@@ -50,7 +50,7 @@ export default function Qrcode() {
       </div>
 
       <div className="flex justify-center border bg-blue-900 text-white  rounded-md  mt-2 border-black">
-        <button onClick={handleDecode}>Copiar QR Code</button>
+        <button onClick={handleDecode}>Clique para copiar QR CODE </button>
         <div className="">
           <Image priority src="/copy.svg" height={20} width={20} alt="copy" />
         </div>

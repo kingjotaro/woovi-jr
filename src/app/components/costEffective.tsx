@@ -43,7 +43,7 @@ function costEffective({installment, cet, idTransaction}: {amount:string, instal
     </div>
     <div className="mt-2 text-sm text-gray-500 flex flex-col items-center justify-center">
     Identificador:
-    <div className="mt-1 text-xs text-gray-400">
+    <div className="mt-1 text-xs text-gray-400 mb-1">
      {idTransaction}
     </div>
     </div>

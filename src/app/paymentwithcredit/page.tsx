@@ -20,12 +20,16 @@ export default function Page2() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-between  min-w-screen">
       <Header/>
-      <HeaderDynamic header={headerPage}></HeaderDynamic>
+      <HeaderDynamic header={headerPage} headerUniquePix={""}></HeaderDynamic>
       <PaymentForm/>
      
       <PaymentDeadline deadline={deadline}/> 
       <InstallmentComponent amount={amount} installments={installment} cet={cet} idTransaction={idTransaction}></InstallmentComponent>
+      <div className="flex flex-row items-center gap-2 mb-2 mt-2">
+
       <PreviousButton/>
+      </div>
+    
       
    
     <Footer></Footer>
