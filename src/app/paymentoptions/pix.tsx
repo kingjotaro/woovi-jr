@@ -1,16 +1,19 @@
-import FixedNavigationButton from "../components/nextButton";
+import NextButton from "../components/nextButton";
+import getTransactionId64 from '../utils/getFormatedDate'
 
-function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
+
+function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, cet }: {
   title: string,
   amount: string,
   cashback: string,
   cashbackAmount: string,
   isSelected: boolean;
   onClick: () => void;
+  cet: string
 
 }) {
 
-
+  let id = getTransactionId64()
 
 
   return (
@@ -38,7 +41,7 @@ function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
     </div>
     <div className='flex flex-row justify-center mt-1 mb-2'>
   
-     <FixedNavigationButton isVisible={isSelected} amount={amount} installment={1} ></FixedNavigationButton>
+     <NextButton isVisible={isSelected} amount={amount} installment={1} cet={cet} idTransaction={id} ></NextButton>
     </div>
     </div>
   );

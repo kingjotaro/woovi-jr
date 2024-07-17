@@ -2,7 +2,7 @@
 import Footer from "../components/footer";
 import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
-import InstallmentComponent from "../paymentpix/Installment";
+import InstallmentComponent from "../components/Installment";
 import PaymentForm from "./paymentForm";
 import PreviousButton from "../components/previousButton";
 
@@ -13,7 +13,7 @@ import PaymentDeadline from "../components/PaymentDeadline";
 
 export default function Page2() {
 
-  const { amount, installment, deadline } = useTransaction();
+  const { amount, installment, deadline, cet, idTransaction } = useTransaction();
 
  const headerPage = `João, pague o restante em 1x no cartão`
 
@@ -24,8 +24,7 @@ export default function Page2() {
       <PaymentForm/>
      
       <PaymentDeadline deadline={deadline}/> 
-      <InstallmentComponent amount={amount} installments={installment}></InstallmentComponent>
-      <CostEffective/>
+      <InstallmentComponent amount={amount} installments={installment} cet={cet} idTransaction={idTransaction}></InstallmentComponent>
       <PreviousButton/>
       
    

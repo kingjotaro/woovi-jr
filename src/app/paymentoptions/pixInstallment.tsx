@@ -1,4 +1,5 @@
-import FixedNavigationButton from "../components/nextButton";
+import NextButton from "../components/nextButton";
+import getTransactionId64 from '../utils/getFormatedDate'
 
 
 function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, installment }: {
@@ -15,6 +16,8 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
 
 
 }) {
+
+  let id = getTransactionId64()
 
 
   const borderColor = isSelected ? 'border-customGreen' : 'border-gray-300';
@@ -33,7 +36,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
         </div>
         <div className="flex flex-col items-start">
           <div className="text-xl font-semibold">{installment+'x R$ '+amount}</div>
-          <div className="text-gray-400"> {cet}</div>
+          <div className="text-gray-400"> {`Total R$ ${cet}`}</div>
           <button
             className={`absolute top-4 right-1 w-6 h-6 rounded-full flex items-center justify-center text-white focus:outline-none ${isSelected ? 'bg-customGreen' : 'bg-gray-200'
               }`}
@@ -47,7 +50,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
       </div>
       <div className='flex flex-row justify-center mt-1 mb-2'>
 
-        <FixedNavigationButton isVisible={isSelected} installment={installment} amount={amount}></FixedNavigationButton>
+        <NextButton isVisible={isSelected} installment={installment} amount={amount} cet={cet} idTransaction={id}></NextButton>
       </div>
     </div>);
 }

@@ -1,11 +1,14 @@
 import React from 'react';
-import CostEffective from '../components/costEffective';
+import CostEffective from './costEffective';
 
 
 
-function InstallmentComponent({ amount, installments }: {
+function InstallmentComponent({ amount, installments, cet, idTransaction }: {
   amount: string,
-  installments: number,}) {
+  installments: number,
+  cet: string,
+  idTransaction: string,
+}) {
   
 
 
@@ -64,7 +67,7 @@ function InstallmentComponent({ amount, installments }: {
       )}
       
     </div>
-    <CostEffective/>
+    <CostEffective amount={amount} installment={installments} cet={cet} idTransaction={idTransaction}></CostEffective>
     
     </div>
   );

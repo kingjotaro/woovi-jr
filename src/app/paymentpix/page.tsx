@@ -2,18 +2,18 @@
 import Footer from "../components/footer";
 import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
-import InstallmentComponent from "./Installment";
-import FixedNavigationButton from "../components/nextButton";
+import InstallmentComponent from "../components/Installment";
 import PreviousButton from "../components/previousButton";
 import Qrcode from "./qrcode";
 import { useTransaction } from '../pixcontext';
 import PaymentDeadline from "../components/PaymentDeadline";
+import NextButton from "../components/nextButton";
 
 
 
 export default function Page2() {
 
-  const { amount, installment, deadline } = useTransaction();
+  const { amount, installment, deadline, cet, idTransaction } = useTransaction();
 
 
 
@@ -27,11 +27,11 @@ R$ ${amount} pelo Pix`
       <Qrcode></Qrcode>
       
       <PaymentDeadline deadline={deadline}/> 
-      <InstallmentComponent amount={amount} installments={installment}></InstallmentComponent>
+      <InstallmentComponent amount={amount} installments={installment} cet={cet} idTransaction={idTransaction}></InstallmentComponent>
      
       <div className="flex flex-row items-center gap-2">
       <PreviousButton/>
-      <FixedNavigationButton isVisible={true} amount={amount} installment={installment}></FixedNavigationButton>
+      <NextButton isVisible={true} amount={amount} installment={installment} cet={cet} idTransaction={idTransaction}></NextButton>
       </div>
       
       

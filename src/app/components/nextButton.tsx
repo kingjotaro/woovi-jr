@@ -4,15 +4,17 @@ import { useTransaction } from '../pixcontext';
 import {generatePaymentDeadline} from '../utils/deadline'
 
 
-function FixedNavigationButton({ isVisible, amount, installment}:  {
+function nextButton({ isVisible, amount, installment, cet, idTransaction}:  {
   isVisible: boolean,
   amount: string,
   installment: number,
+  cet: string
+  idTransaction: string
 } ) {
 
   const deadline = generatePaymentDeadline()
 
-  const { setAmount, setInstallment, setDeadline } = useTransaction();
+  const { setAmount, setInstallment, setDeadline, setCet, setIdTransaction  } = useTransaction();
 
  
    
@@ -34,6 +36,8 @@ function FixedNavigationButton({ isVisible, amount, installment}:  {
     setAmount(amount);
     setInstallment(installment);
     setDeadline(deadline)
+    setCet(cet)
+    setIdTransaction(idTransaction)
   }
 
   return (
@@ -47,4 +51,4 @@ function FixedNavigationButton({ isVisible, amount, installment}:  {
     )
   );
 }
-export default FixedNavigationButton;
+export default nextButton
