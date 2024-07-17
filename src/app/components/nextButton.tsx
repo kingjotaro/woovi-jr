@@ -1,6 +1,7 @@
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
 import { useTransaction } from '../pixcontext';
+import {generatePaymentDeadline} from '../utils/deadline'
 
 
 function FixedNavigationButton({ isVisible, amount, installment}:  {
@@ -9,7 +10,9 @@ function FixedNavigationButton({ isVisible, amount, installment}:  {
   installment: number,
 } ) {
 
-  const { setAmount, setInstallment } = useTransaction();
+  const deadline = generatePaymentDeadline()
+
+  const { setAmount, setInstallment, setDeadline } = useTransaction();
 
  
    
@@ -30,6 +33,7 @@ function FixedNavigationButton({ isVisible, amount, installment}:  {
     }
     setAmount(amount);
     setInstallment(installment);
+    setDeadline(deadline)
   }
 
   return (

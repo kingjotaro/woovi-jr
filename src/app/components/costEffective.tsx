@@ -1,7 +1,7 @@
 // src/TotalComponent.js
 import React, { useState } from 'react';
 
-const TotalComponent = () => {
+function costEffective() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleDetails = () => {
@@ -10,7 +10,7 @@ const TotalComponent = () => {
 
   return (
     <div>
-    <div className="border p-4 rounded-lg">
+    <div className="border p-4 rounded-b-lg">
       <div className="flex justify-between text-sm text-gray-700">
         <span>CET: 0,5%</span>
         <span>Total: R$ 30.600,00</span>
@@ -49,4 +49,4 @@ const TotalComponent = () => {
   );
 };
 
-export default TotalComponent;
+export default costEffective;

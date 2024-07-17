@@ -6,15 +6,14 @@ import InstallmentComponent from "./Installment";
 import FixedNavigationButton from "../components/nextButton";
 import PreviousButton from "../components/previousButton";
 import Qrcode from "./qrcode";
-import PaymentDeadline from "../components/timeLimit";
-import TotalComponent from "../components/custoTotal";
 import { useTransaction } from '../pixcontext';
+import PaymentDeadline from "../components/PaymentDeadline";
 
 
 
 export default function Page2() {
 
-  const { amount, installment } = useTransaction();
+  const { amount, installment, deadline } = useTransaction();
 
 
 
@@ -27,10 +26,9 @@ R$ ${amount} pelo Pix`
       <HeaderDynamic header={headerPage}></HeaderDynamic>
       <Qrcode></Qrcode>
       
-      <PaymentDeadline></PaymentDeadline> 
+      <PaymentDeadline deadline={deadline}/> 
       <InstallmentComponent amount={amount} installments={installment}></InstallmentComponent>
-      <TotalComponent></TotalComponent>
-    
+     
       <div className="flex flex-row items-center gap-2">
       <PreviousButton/>
       <FixedNavigationButton isVisible={true} amount={amount} installment={installment}></FixedNavigationButton>

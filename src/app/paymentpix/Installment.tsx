@@ -1,16 +1,18 @@
 import React from 'react';
+import CostEffective from '../components/costEffective';
 
 
 
 function InstallmentComponent({ amount, installments }: {
   amount: string,
   installments: number,}) {
-  const installmentAmount = (parseFloat(amount) / installments).toFixed(2);
+  
 
 
 
   return (
-    <div className="relative flex flex-col space-y-4 p-4 border rounded-lg">
+    <div>
+    <div className="relative flex flex-col space-y-4 p-4 border rounded-t-lg">
       {installments === 1 ? (
         <div className="flex items-center space-x-2 justify-between">
           <div className="relative flex items-center ">
@@ -28,6 +30,7 @@ function InstallmentComponent({ amount, installments }: {
         </div>
       ) : (
         <>
+        
           <div className="absolute left-[21px] top-10 bottom-6 w-0.5 bg-gray-300"></div>
           <div className="flex items-center space-x-2 justify-between">
             <div className="relative flex items-center ">
@@ -59,6 +62,10 @@ function InstallmentComponent({ amount, installments }: {
           ))}
         </>
       )}
+      
+    </div>
+    <CostEffective/>
+    
     </div>
   );
 };

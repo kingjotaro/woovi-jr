@@ -5,14 +5,15 @@ import HeaderDynamic from "../components/headerDynamic";
 import InstallmentComponent from "../paymentpix/Installment";
 import PaymentForm from "./paymentForm";
 import PreviousButton from "../components/previousButton";
-import PaymentDeadline from "../components/timeLimit";
-import TotalComponent from "../components/custoTotal";
+
 import { useTransaction } from "../pixcontext";
+import CostEffective from "../components/costEffective";
+import PaymentDeadline from "../components/PaymentDeadline";
 
 
 export default function Page2() {
 
-  const { amount, installment } = useTransaction();
+  const { amount, installment, deadline } = useTransaction();
 
  const headerPage = `João, pague o restante em 1x no cartão`
 
@@ -22,9 +23,9 @@ export default function Page2() {
       <HeaderDynamic header={headerPage}></HeaderDynamic>
       <PaymentForm/>
      
-      <PaymentDeadline/> 
+      <PaymentDeadline deadline={deadline}/> 
       <InstallmentComponent amount={amount} installments={installment}></InstallmentComponent>
-      <TotalComponent/>
+      <CostEffective/>
       <PreviousButton/>
       
    

@@ -6,6 +6,8 @@ interface TransactionContextProps {
   installment: number;
   setAmount: (amount: string) => void;
   setInstallment: (installment: number) => void;
+  deadline: string;
+  setDeadline: (deadline: string) => void;
 }
 
 const TransactionContext = createContext<TransactionContextProps | undefined>(undefined);
@@ -13,9 +15,10 @@ const TransactionContext = createContext<TransactionContextProps | undefined>(un
 export const TransactionProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [amount, setAmount] = useState<string>('');
   const [installment, setInstallment] = useState<number>(0);
+  const [deadline, setDeadline] = useState<string>('')
 
   return (
-    <TransactionContext.Provider value={{ amount, installment, setAmount, setInstallment }}>
+    <TransactionContext.Provider value={{ amount, installment, setAmount, setInstallment, deadline, setDeadline }}>
       {children}
     </TransactionContext.Provider>
   );
