@@ -33,7 +33,7 @@ R$ ${amount} pelo Pix`
     
       <div className="flex flex-row items-center gap-2">
       <PreviousButton/>
-      <FixedNavigationButton isVisible={true} amount={amount} installment={1}></FixedNavigationButton>
+      <FixedNavigationButton isVisible={true} amount={amount} installment={installment}></FixedNavigationButton>
       </div>
       
       

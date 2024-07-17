@@ -7,9 +7,12 @@ import PaymentForm from "./paymentForm";
 import PreviousButton from "../components/previousButton";
 import PaymentDeadline from "../components/timeLimit";
 import TotalComponent from "../components/custoTotal";
+import { useTransaction } from "../pixcontext";
 
 
 export default function Page2() {
+
+  const { amount, installment } = useTransaction();
 
  const headerPage = `João, pague o restante em 1x no cartão`
 
@@ -20,7 +23,7 @@ export default function Page2() {
       <PaymentForm/>
      
       <PaymentDeadline/> 
-      <InstallmentComponent amount={""} installments={0}/>
+      <InstallmentComponent amount={amount} installments={installment}></InstallmentComponent>
       <TotalComponent/>
       <PreviousButton/>
       

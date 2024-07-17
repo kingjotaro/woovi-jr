@@ -6,7 +6,7 @@ import PixList from "./pixControlerArea";
 
 export default function Index() {
 
-   const headerPage = "Contratar Rafael por um ano, como deseja pagar?"
+   const headerPage = "João, como você quer pagar?"
   return (
     <div className="flex min-h-screen flex-col items-center justify-between  min-w-screen">
       <Header></Header>
