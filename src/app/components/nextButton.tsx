@@ -1,21 +1,35 @@
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
+import { useTransaction } from '../pixcontext';
 
 
-function FixedNavigationButton({ isVisible}:  any ) {
+function FixedNavigationButton({ isVisible, amount, installment}:  {
+  isVisible: boolean,
+  amount: string,
+  installment: number,
+} ) {
+
+  const { setAmount, setInstallment } = useTransaction();
+
+ 
+   
+
   const router = useRouter();
 
   const pathname = usePathname()
 
   function next() {
     if (pathname === "/") {
-      router.push('/paymentpix');
+      router.push('/paymentpix',
+        
+      );
+      
     }
     if (pathname === '/paymentpix') {
       router.push('/paymentwithcredit');
     }
-  
-    
+    setAmount(amount);
+    setInstallment(installment);
   }
 
   return (
@@ -29,5 +43,4 @@ function FixedNavigationButton({ isVisible}:  any ) {
     )
   );
 }
-
 export default FixedNavigationButton;

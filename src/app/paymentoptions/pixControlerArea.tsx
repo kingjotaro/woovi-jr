@@ -16,6 +16,8 @@ function PixList() {
 
     const pixData = calculateProgressiveDiscount(initialAmount, month, monthlyDiscountRate);
 
+    console.log(pixData)
+
     function handleSelect(item: string) {
         if (selectedItem !== item) {
             setSelectedItem(item);
@@ -25,7 +27,7 @@ function PixList() {
           
         }
     }
-
+  
 
 
     return (
@@ -49,6 +51,7 @@ function PixList() {
                     index={index}
                     title={item.title}
                     amount={item.amount}
+                    installment={item.installment}
                     cet={item.cet}
                     isSelected={selectedItem === `pixItem-${index + 1}`}
                     onClick={() => handleSelect(`pixItem-${index + 1}`)}

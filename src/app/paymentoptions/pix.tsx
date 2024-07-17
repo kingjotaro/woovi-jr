@@ -1,4 +1,4 @@
-import FixedNavigationButton from "../paymentpix/nextButton";
+import FixedNavigationButton from "../components/nextButton";
 
 function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
   title: string,
@@ -38,7 +38,7 @@ function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick }: {
     </div>
     <div className='flex flex-row justify-center mt-1 mb-2'>
   
-     <FixedNavigationButton isVisible={isSelected}></FixedNavigationButton>
+     <FixedNavigationButton isVisible={isSelected} amount={amount} installment={1} ></FixedNavigationButton>
     </div>
     </div>
   );

@@ -20,7 +20,7 @@ export default function Page2() {
       <PaymentForm/>
      
       <PaymentDeadline/> 
-      <InstallmentComponent/>
+      <InstallmentComponent amount={""} installments={0}/>
       <TotalComponent/>
       <PreviousButton/>
       

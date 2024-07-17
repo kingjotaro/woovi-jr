@@ -1,7 +1,7 @@
-import FixedNavigationButton from "../paymentpix/nextButton";
+import FixedNavigationButton from "../components/nextButton";
 
 
-function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems }: {
+function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, installment }: {
 
   title: string,
   amount: string,
@@ -10,6 +10,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems }:
   onClick: () => void;
   index: number,
   totalItems: number,
+  installment: number,
 
 
 
@@ -17,6 +18,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems }:
 
 
   const borderColor = isSelected ? 'border-customGreen' : 'border-gray-300';
+
   const borderTop = index === 0 ? 'rounded-t-lg' : '';
   const borderBottom = index === totalItems - 2 ? 'rounded-b-lg' : '';
 
@@ -30,7 +32,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems }:
           {title}
         </div>
         <div className="flex flex-col items-start">
-          <div className="text-xl font-semibold">{amount}</div>
+          <div className="text-xl font-semibold">{installment+amount}</div>
           <div className="text-gray-400"> {cet}</div>
           <button
             className={`absolute top-4 right-1 w-6 h-6 rounded-full flex items-center justify-center text-white focus:outline-none ${isSelected ? 'bg-customGreen' : 'bg-gray-200'
@@ -45,7 +47,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems }:
       </div>
       <div className='flex flex-row justify-center mt-1 mb-2'>
 
-        <FixedNavigationButton isVisible={isSelected}></FixedNavigationButton>
+        <FixedNavigationButton isVisible={isSelected} installment={installment} amount={amount}></FixedNavigationButton>
       </div>
     </div>);
 }
