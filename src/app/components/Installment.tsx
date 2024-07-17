@@ -3,7 +3,7 @@ import CostEffective from './costEffective';
 
 
 
-function InstallmentComponent({ amount, installments, cet, idTransaction }: {
+function Installment({ amount, installments, cet, idTransaction }: {
   amount: string,
   installments: number,
   cet: string,
@@ -73,4 +73,4 @@ function InstallmentComponent({ amount, installments, cet, idTransaction }: {
   );
 };
 
-export default InstallmentComponent;
+export default Installment;

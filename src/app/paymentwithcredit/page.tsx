@@ -2,13 +2,12 @@
 import Footer from "../components/footer";
 import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
-import InstallmentComponent from "../components/Installment";
 import PaymentForm from "./paymentForm";
 import PreviousButton from "../components/previousButton";
 
 import { useTransaction } from "../pixcontext";
-import CostEffective from "../components/costEffective";
 import PaymentDeadline from "../components/PaymentDeadline";
+import Installment from "../components/Installment";
 
 
 export default function Page2() {
@@ -24,7 +23,7 @@ export default function Page2() {
       <PaymentForm/>
      
       <PaymentDeadline deadline={deadline}/> 
-      <InstallmentComponent amount={amount} installments={installment} cet={cet} idTransaction={idTransaction}></InstallmentComponent>
+      <Installment amount={amount} installments={installment} cet={cet} idTransaction={idTransaction}></Installment>
       <div className="flex flex-row items-center gap-2 mb-2 mt-2">
 
       <PreviousButton/>
