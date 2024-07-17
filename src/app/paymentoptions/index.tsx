@@ -12,7 +12,7 @@ export default function Index() {
       <Header></Header>
       
    
-   <HeaderDynamic header={headerPage} headerUniquePix={""}></HeaderDynamic>
+   <HeaderDynamic header={headerPage}></HeaderDynamic>
       
       <PixList></PixList>
 

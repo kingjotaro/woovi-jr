@@ -1,15 +1,9 @@
-import React from 'react';
-import { useTransaction } from '../pixcontext';
+import React from "react";
 
-function HeaderDynamic({header, headerUniquePix}: {header: string, headerUniquePix: string} ) {
-
-  const { installment} = useTransaction();
-
-  const evaluateHeader = (installment === 0) ? header : (installment === 1) ? headerUniquePix : header
-
+function HeaderDynamic({ header }: { header: string }) {
   return (
-    <div className='text-center text-md font-extrabold text-[#4D4D4D] p-2'>
-       {evaluateHeader}
+    <div className="text-center text-md font-extrabold text-[#4D4D4D] max-w-md w-screen">
+      {header}
     </div>
   );
 }

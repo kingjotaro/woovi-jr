@@ -16,7 +16,6 @@ function PixList() {
 
     const pixData = calculateProgressiveDiscount(initialAmount, month, monthlyDiscountRate);
 
-    console.log(pixData)
 
     function handleSelect(item: string) {
         if (selectedItem !== item) {

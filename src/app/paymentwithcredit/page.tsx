@@ -14,12 +14,12 @@ export default function Page2() {
 
   const { amount, installment, deadline, cet, idTransaction } = useTransaction();
 
- const headerPage = `João, pague o restante em 1x no cartão`
+ const headerPage = `João, pague o restante em ${installment-1}x no cartão`
 
   return (
     <div className="flex min-h-screen flex-col items-center justify-between  min-w-screen">
       <Header/>
-      <HeaderDynamic header={headerPage} headerUniquePix={""}></HeaderDynamic>
+      <HeaderDynamic header={headerPage}></HeaderDynamic>
       <PaymentForm/>
      
       <PaymentDeadline deadline={deadline}/> 

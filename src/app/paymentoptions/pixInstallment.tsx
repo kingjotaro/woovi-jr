@@ -17,7 +17,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
 
 }) {
 
-  console.log(amount)
+
 
   let id = getTransactionId64()
 
@@ -30,7 +30,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
 
   return (
     <div>
-      <div className={`relative border p-4 shadow-lg ${borderColor} ${borderTop} ${borderBottom}`}
+      <div className={`hover:border-customGreen relative border p-4 shadow-lg ${borderColor} ${borderTop} ${borderBottom}`}
         onClick={onClick}
       >
         <div className="absolute top-0 left-4 transform -translate-y-1/2 bg-gray-300 h-6 w-28 rounded-full flex items-center justify-center font-bold text-sm">

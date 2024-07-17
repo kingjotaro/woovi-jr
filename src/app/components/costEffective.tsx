@@ -14,7 +14,7 @@ function costEffective({installment, cet, idTransaction, amount}: {amount:string
 
   return (
     <div>
-    <div className="border p-4 rounded-b-lg">
+    <div className="border p-4 rounded-b-lg max-w-md w-screen">
       <div className="flex justify-between text-sm text-gray-700">
         <span>CET: {formattedCET}%</span>
         <span>{CET}</span>

@@ -21,7 +21,7 @@ function PreviousButton() {
   return (
 
     <button
-      className="border-customGreen left-4 p-2 w-24 h-10 bg-customGreen text-white rounded-full shadow-lg font-bold shadow-lg shadow-gren-500/50"
+      className="hover:text-black border-customGreen left-4 p-2 w-24 h-10 bg-customGreen text-white rounded-full font-bold shadow-lg shadow-gren-500/50"
       onClick={next}
     >
       Voltar

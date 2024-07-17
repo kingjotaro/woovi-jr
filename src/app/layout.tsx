@@ -8,6 +8,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <title>Woovi Jr Challenge</title>
       <body>
         <TransactionProvider>{children}</TransactionProvider>
       </body>
