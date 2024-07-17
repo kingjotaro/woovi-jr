@@ -40,7 +40,7 @@ function InstallmentComponent({ amount, installments }: {
               <label htmlFor="pix" className="ml-2">1ª entrada no Pix</label>
             </div>
             <div className="ml-auto text-right text-gray-700 font-semibold">
-              R$ {installmentAmount}
+              R$ {amount}
             </div>
           </div>
           {[...Array(installments - 1)].map((_, index) => (
@@ -53,7 +53,7 @@ function InstallmentComponent({ amount, installments }: {
                 <label htmlFor={`card-${index + 1}`} className="ml-2">{index + 2}ª no cartão</label>
               </div>
               <div className="ml-auto text-right text-gray-700 font-semibold">
-                R$ {installmentAmount}
+                R$ {amount}
               </div>
             </div>
           ))}

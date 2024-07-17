@@ -42,7 +42,7 @@ export default function Qrcode() {
   const paymentData = generateBRCode(emvCode);
 
   return (
-    <div>
+    <div className="mt-5 gap-1">
       <div>
         <div ref={qrRef}>
           <QRCode value={paymentData} size={332} />

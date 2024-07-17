@@ -32,7 +32,7 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
           {title}
         </div>
         <div className="flex flex-col items-start">
-          <div className="text-xl font-semibold">{installment+amount}</div>
+          <div className="text-xl font-semibold">{installment+'x R$ '+amount}</div>
           <div className="text-gray-400"> {cet}</div>
           <button
             className={`absolute top-4 right-1 w-6 h-6 rounded-full flex items-center justify-center text-white focus:outline-none ${isSelected ? 'bg-customGreen' : 'bg-gray-200'
