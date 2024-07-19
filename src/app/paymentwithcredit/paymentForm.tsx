@@ -4,6 +4,7 @@ import NameInput from "./formsComponents/formName";
 import FormCPF from "./formsComponents/formCPF";
 import isValidCPF from "../utils/validateCPF";
 import FormExpirationCard from "./formsComponents/formExpirationCard";
+import FormVerifyDigit from "./formsComponents/formVerifyDigit";
 
 function PaymentForm(pixData: any) {
   const [formData, setFormData] = useState({
@@ -68,23 +69,9 @@ function PaymentForm(pixData: any) {
        
         <div className="flex mb-4">
         <FormExpirationCard formDataExpirationCard={formData.expiry} handleChange={handleChange}></FormExpirationCard>
-          <div className="w-1/2 ml-2">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="cvv"
-            >
-              CVV
-            </label>
-            <input
-              id="cvv"
-              type="text"
-              placeholder="405"
-              value={formData.cvv}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+        <FormVerifyDigit formDataCVV={formData.cvv} handleChange={handleChange}></FormVerifyDigit>
         </div>
+       
       <InstallmentCredit pixData={pixData}></InstallmentCredit>
         <button
           type="submit"
