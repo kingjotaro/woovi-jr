@@ -1,6 +1,7 @@
 import React from 'react';
 
 function InstallmentPayments({ installments, amount, process }: any) {
+
   return (
     <div>
       {[...Array(installments - 1)].map((_, index) => (

@@ -17,7 +17,7 @@ function nextButton({ isVisible, amount, installment, cet, idTransaction}:  {
   const { setAmount, setInstallment, setDeadline, setCet, setIdTransaction  } = useTransaction();
 
  
-   
+
 
   const router = useRouter();
 

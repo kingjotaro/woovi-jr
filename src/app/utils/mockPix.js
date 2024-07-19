@@ -15,7 +15,7 @@ function calculateProgressiveDiscount(initialAmount, months, monthlyDiscountRate
 
             const installment = {
                 title: 'Pix Parcelado',
-                installment: 12,
+                installment: months,
                 amount: formatarNumero(initialAmount / months),
                 cet: formattedAmount
             };
