@@ -19,7 +19,7 @@ function Installment({
 }) {
   return (
     <div>
-      <div className="relative flex flex-col space-y-4 p-4 border rounded-t-lg">
+      <div className="relative flex flex-col space-y-2 p-4 border rounded-t-lg">
         {installments === 1 ? (
            <UniquePix amount={amount}></UniquePix>
         ) : (
