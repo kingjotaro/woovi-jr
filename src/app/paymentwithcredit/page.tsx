@@ -26,7 +26,7 @@ export default function Page2() {
   const month = 11;
   const pixData = calculateProgressiveDiscount(totalAmount, month, monthlyDiscountRate);
 
-  console.log(installment)
+  console.log(amount)
   
 
   return (
@@ -41,7 +41,7 @@ export default function Page2() {
         cet={cet}
         idTransaction={idTransaction}
         process={"credit"} 
-        amount={""} 
+        amount={amount} 
         installments={installment}      ></Installment>
       <div className="flex flex-row items-center gap-2 mb-2 mt-2">
         <PreviousButton />

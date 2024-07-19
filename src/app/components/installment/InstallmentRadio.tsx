@@ -5,7 +5,13 @@ function InstallmentRadio({ process }: { process: string }) {
     <>
       {process === "pix" ? (
         <div className="relative flex items-center">
-          <input type="checkbox" name="payment" readOnly checked className="accent-customGreen" />
+          <input
+            type="checkbox"
+            name="payment"
+            readOnly
+            checked
+            className="accent-customGreen"
+          />
           <label htmlFor="pix" className="ml-2">
             1ª entrada no Pix
           </label>
@@ -13,8 +19,13 @@ function InstallmentRadio({ process }: { process: string }) {
         </div>
       ) : (
         <div className="relative flex items-center">
-          <input type="checkbox" name="payment" readOnly checked className="accent-black" />
-
+          <input
+            type="checkbox"
+            name="payment"
+            readOnly
+            checked
+            className="accent-black"
+          />
           <label htmlFor="pix" className="ml-2">
             1ª entrada no Pix
           </label>
