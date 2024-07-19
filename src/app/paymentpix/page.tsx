@@ -7,7 +7,7 @@ import Qrcode from "./qrcode";
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
 import NextButton from "../components/nextButton";
-import Installment from "../components/installment/Installment";
+import Installment from "../components/installment/InstallmentPaymentList";
 import FinishButton from "../components/endProcess";
 
 export default function Page2() {

@@ -1,6 +1,6 @@
 import React from "react";
 
-function InstallmentRadio({ process }: { process: string }) {
+function InstallmentPix({ process }: { process: string }) {
   return (
     <>
       {process === "pix" ? (
@@ -35,4 +35,4 @@ function InstallmentRadio({ process }: { process: string }) {
   );
 }
 
-export default InstallmentRadio;
+export default InstallmentPix;

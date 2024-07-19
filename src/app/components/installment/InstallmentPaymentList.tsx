@@ -1,10 +1,10 @@
 import React from "react";
 import CostEffective from "../costEffective";
 import UniquePix from "./UniquePix";
-import InstallmentRadio from "./InstallmentRadio";
-import InstallmentePayments from "./InstallmentePayments";
+import InstallmentRadio from "./InstallmentPix";
+import InstallmentePayments from "./InstallmentPaymentCredit";
 
-function Installment({
+function InstallmentPaymentList({
   amount,
   installments,
   cet,
@@ -45,4 +45,4 @@ function Installment({
   );
 }
 
-export default Installment;
+export default InstallmentPaymentList;

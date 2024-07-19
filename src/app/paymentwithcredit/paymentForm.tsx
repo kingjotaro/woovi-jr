@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import InstallmentCredit from "./InstallmentCredit";
+import NameInput from "./formsComponents/formName";
+import FormCPF from "./formsComponents/formCPF";
+import isValidCPF from "../utils/validateCPF";
 
 function PaymentForm(pixData: any) {
   const [formData, setFormData] = useState({
@@ -19,16 +22,15 @@ function PaymentForm(pixData: any) {
   const handleSubmit = (e: { preventDefault: () => void; }) => {
     e.preventDefault();
 
-    // Validação dos campos
+    
     if (!formData.name.trim()) {
       alert("Por favor, preencha o nome completo.");
       return;
     }
 
-    if (!formData.cpf.trim() || !/^\d{3}\.\d{3}\.\d{3}-\d{2}$/.test(formData.cpf)) {
-      alert("Por favor, informe um CPF válido no formato 000.000.000-00.");
-      return;
-    }
+    console.log(formData.cpf)
+
+   
 
     if (!formData.cardNumber.trim()) {
       alert("Por favor, preencha o número do cartão.");
@@ -60,38 +62,8 @@ function PaymentForm(pixData: any) {
     <div className="max-w-md mx-auto bg-white p-8 rounded-lg">
       <h2 className="text-2xl font-bold mb-6">Pagamento</h2>
       <form onSubmit={handleSubmit}>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="name"
-          >
-            Nome completo
-          </label>
-          <input
-            id="name"
-            type="text"
-            placeholder="João Linaldo Dias Fraga Santos"
-            value={formData.name}
-            onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="cpf"
-          >
-            CPF
-          </label>
-          <input
-            id="cpf"
-            type="text"
-            placeholder="405.503.503-15"
-            value={formData.cpf}
-            onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
+       <NameInput formDataName={formData.name} handleChange={handleChange}></NameInput>
+        <FormCPF formDataCPF={formData.cpf} handleChange={handleChange}></FormCPF>
         <div className="mb-4">
           <label
             className="block text-gray-700 text-sm font-bold mb-2"

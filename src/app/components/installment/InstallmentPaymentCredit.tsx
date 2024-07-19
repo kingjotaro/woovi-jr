@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function InstallmentPayments({ installments, amount, process }: any) {
+function InstallmentPaymentCredit({ installments, amount, process }: any) {
   const [isChecked, setIsChecked] = useState(process !== 'pix');
 
   useEffect(() => {
@@ -30,4 +30,4 @@ console.log(amount)
   );
 }
 
-export default InstallmentPayments;
+export default InstallmentPaymentCredit;

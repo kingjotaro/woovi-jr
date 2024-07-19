@@ -7,7 +7,7 @@ import PreviousButton from "../components/previousButton";
 
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
-import Installment from "../components/installment/Installment";
+import Installment from "../components/installment/InstallmentPaymentList";
 import FinishButton from "../components/endProcess";
 import calculateProgressiveDiscount from "../utils/mockPix";
 
