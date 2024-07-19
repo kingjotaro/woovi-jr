@@ -3,6 +3,7 @@ import InstallmentCredit from "./InstallmentCredit";
 import NameInput from "./formsComponents/formName";
 import FormCPF from "./formsComponents/formCPF";
 import isValidCPF from "../utils/validateCPF";
+import FormExpirationCard from "./formsComponents/formExpirationCard";
 
 function PaymentForm(pixData: any) {
   const [formData, setFormData] = useState({
@@ -64,39 +65,9 @@ function PaymentForm(pixData: any) {
       <form onSubmit={handleSubmit}>
        <NameInput formDataName={formData.name} handleChange={handleChange}></NameInput>
         <FormCPF formDataCPF={formData.cpf} handleChange={handleChange}></FormCPF>
-        <div className="mb-4">
-          <label
-            className="block text-gray-700 text-sm font-bold mb-2"
-            htmlFor="cardNumber"
-          >
-            Número do cartão
-          </label>
-          <input
-            id="cardNumber"
-            type="text"
-            placeholder="405.503.503-15"
-            value={formData.cardNumber}
-            onChange={handleChange}
-            className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-          />
-        </div>
+       
         <div className="flex mb-4">
-          <div className="w-1/2 mr-2">
-            <label
-              className="block text-gray-700 text-sm font-bold mb-2"
-              htmlFor="expiry"
-            >
-              Vencimento
-            </label>
-            <input
-              id="expiry"
-              type="text"
-              placeholder="10/11"
-              value={formData.expiry}
-              onChange={handleChange}
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-            />
-          </div>
+        <FormExpirationCard formDataExpirationCard={formData.expiry} handleChange={handleChange}></FormExpirationCard>
           <div className="w-1/2 ml-2">
             <label
               className="block text-gray-700 text-sm font-bold mb-2"

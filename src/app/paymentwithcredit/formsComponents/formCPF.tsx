@@ -30,7 +30,7 @@ function FormCPF({
         id="cpf"
         type="text"
         placeholder="405.503.503-15"
-        value={formDataCPF}
+        value={formatCPF(formDataCPF)}
         onChange={handleChange}
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       />
