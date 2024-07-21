@@ -1,13 +1,13 @@
 import isValidCPF from "../utils/validateCPF";
 import React, { useState } from "react";
-import InstallmentCredit from "./InstallmentCredit";
 import NameInput from "./formsComponents/formName";
 import FormCPF from "./formsComponents/formCPF";
 import FormExpirationCard from "./formsComponents/formExpirationCard";
 import FormVerifyDigit from "./formsComponents/formVerifyDigit";
 import FormCardNumber from "./formsComponents/formCardNumber";
+import FormInstallmentCredit from "./formsComponents/formInstallmentCredit";
 
-function PaymentForm(pixData: any) {
+function PaymentForm({amount, installment, pixData}: any) {
   const [formData, setFormData] = useState({
     name: "",
     cpf: "",
@@ -71,7 +71,7 @@ function PaymentForm(pixData: any) {
         <FormVerifyDigit formDataCVV={formData.cvv} handleChange={handleChange}></FormVerifyDigit>
         </div>
        
-      <InstallmentCredit pixData={pixData}></InstallmentCredit>
+      <FormInstallmentCredit pixData={pixData}></FormInstallmentCredit>
         <button
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

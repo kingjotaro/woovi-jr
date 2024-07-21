@@ -4,23 +4,25 @@ import UniquePix from "./UniquePix";
 import InstallmentRadio from "./InstallmentPix";
 import InstallmentePayments from "./InstallmentPaymentCredit";
 
-function InstallmentPaymentList({
-  amount,
-  installments,
-  cet,
-  idTransaction,
-  process,
-}: {
-  amount: string;
-  installments: number;
+type InstallmentDetailsType = {
   cet: string;
   idTransaction: string;
   process: string;
-}) {
+  amount: string;
+  installment: number;
+};
+
+interface InstallmentPaymentListProps {
+  installmentDetails: InstallmentDetailsType;
+}
+
+function InstallmentPaymentList({ installmentDetails }: InstallmentPaymentListProps) {
+
+  const { amount, installment, cet, idTransaction, process } = installmentDetails;
   return (
     <div>
       <div className="relative flex flex-col space-y-2 p-4 border rounded-t-lg">
-        {installments === 1 ? (
+        {installment === 1 ? (
            <UniquePix amount={amount}></UniquePix>
         ) : (
           <>
@@ -31,13 +33,13 @@ function InstallmentPaymentList({
                 R$ {amount}
               </div>
             </div>
-           <InstallmentePayments installments={installments} amount={amount} process={process}></InstallmentePayments>
+           <InstallmentePayments installment={installment} amount={amount} process={process}></InstallmentePayments>
           </>
         )}
       </div>
       <CostEffective
         amount={amount}
-        installment={installments}
+        installment={installment}
         cet={cet}
         idTransaction={idTransaction}
       ></CostEffective>

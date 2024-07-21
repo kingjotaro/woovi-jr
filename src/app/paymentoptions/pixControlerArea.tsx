@@ -1,5 +1,5 @@
 import PixItem from './pixInstallment';
-import calculateProgressiveDiscount from '../utils/mockPix'
+import calculateProgressiveDiscount from '../utils/InstallmentPix'
 import Pix from './pix';
 import { useState } from 'react';
 

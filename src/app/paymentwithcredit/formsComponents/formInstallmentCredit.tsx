@@ -1,9 +1,6 @@
 import React from "react";
 
-function InstallmentCredit(pixData: any) {
-  const installmentValue = pixData.installmentValue;
-  console.log(pixData);
-
+function FormInstallmentCredit({ pixData }: { pixData: any }) {
   return (
     <div className="mb-4">
       <label
@@ -17,10 +14,14 @@ function InstallmentCredit(pixData: any) {
         className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
       >
         <option value="">Selecione...</option>
-        {installmentValue}
+        {pixData.map((item: any, index: number) => (
+          <option key={index} value={item.installment}>
+            {`${item.title} - ${item.installment}x de R$${item.amount}`}
+          </option>
+        ))}
       </select>
     </div>
   );
 }
 
-export default InstallmentCredit;
+export default FormInstallmentCredit;

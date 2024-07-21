@@ -1,4 +1,4 @@
-function calculateProgressiveDiscount(initialAmount, months, monthlyDiscountRate) {
+function InstallmentPix(initialAmount, months, monthlyDiscountRate) {
     function formatarNumero(numero) {
         return numero.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
@@ -48,4 +48,4 @@ function calculateProgressiveDiscount(initialAmount, months, monthlyDiscountRate
     return results;
 }
 
-export default calculateProgressiveDiscount;
+export default InstallmentPix;
