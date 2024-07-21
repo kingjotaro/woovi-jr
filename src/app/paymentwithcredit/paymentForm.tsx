@@ -1,10 +1,11 @@
+import isValidCPF from "../utils/validateCPF";
 import React, { useState } from "react";
 import InstallmentCredit from "./InstallmentCredit";
 import NameInput from "./formsComponents/formName";
 import FormCPF from "./formsComponents/formCPF";
-import isValidCPF from "../utils/validateCPF";
 import FormExpirationCard from "./formsComponents/formExpirationCard";
 import FormVerifyDigit from "./formsComponents/formVerifyDigit";
+import FormCardNumber from "./formsComponents/formCardNumber";
 
 function PaymentForm(pixData: any) {
   const [formData, setFormData] = useState({
@@ -22,6 +23,8 @@ function PaymentForm(pixData: any) {
   };
 
   const handleSubmit = (e: { preventDefault: () => void; }) => {
+    isValidCPF(formData.cpf);
+
     e.preventDefault();
 
     
@@ -29,10 +32,6 @@ function PaymentForm(pixData: any) {
       alert("Por favor, preencha o nome completo.");
       return;
     }
-
-    console.log(formData.cpf)
-
-   
 
     if (!formData.cardNumber.trim()) {
       alert("Por favor, preencha o número do cartão.");
@@ -66,7 +65,7 @@ function PaymentForm(pixData: any) {
       <form onSubmit={handleSubmit}>
        <NameInput formDataName={formData.name} handleChange={handleChange}></NameInput>
         <FormCPF formDataCPF={formData.cpf} handleChange={handleChange}></FormCPF>
-       
+       <FormCardNumber formCardNumber={formData.cardNumber} handleChange={handleChange}></FormCardNumber>
         <div className="flex mb-4">
         <FormExpirationCard formDataExpirationCard={formData.expiry} handleChange={handleChange}></FormExpirationCard>
         <FormVerifyDigit formDataCVV={formData.cvv} handleChange={handleChange}></FormVerifyDigit>

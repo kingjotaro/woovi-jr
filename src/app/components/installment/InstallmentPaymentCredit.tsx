@@ -7,7 +7,7 @@ function InstallmentPaymentCredit({ installments, amount, process }: any) {
     setIsChecked(process !== 'pix');
   }, [process]);
 
-console.log(amount)
+
   return (
     <div>
       {[...Array(installments - 1)].map((_, index) => (

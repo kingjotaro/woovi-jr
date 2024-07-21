@@ -26,7 +26,7 @@ export default function Page2() {
   const month = 11;
   const pixData = calculateProgressiveDiscount(totalAmount, month, monthlyDiscountRate);
 
-  console.log(amount)
+ 
   
 
   return (
