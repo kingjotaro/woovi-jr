@@ -8,13 +8,14 @@ function PixList() {
     const [selectedItem, setSelectedItem] = useState<string | null>(null);
 
 
+
     const totalDiscountRate = "3%";
-    const monthlyDiscountRate = 0.03 / 12;
+    const monthlyDiscountRate = 0.0025  ;
     const initialAmount = 36000;
-    const month = 12;
     const cashback = Number((initialAmount * 0.03).toFixed(2)).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 
-    const pixData = calculateProgressiveDiscount(initialAmount, month, monthlyDiscountRate);
+    const pixData = calculateProgressiveDiscount(initialAmount, monthlyDiscountRate);
+   
 
 
     function handleSelect(item: string) {

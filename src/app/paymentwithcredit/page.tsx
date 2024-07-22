@@ -4,42 +4,33 @@ import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
 import PaymentForm from "./paymentForm";
 import PreviousButton from "../components/previousButton";
-
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
-import InstallmentPaymentList from "../components/installment/InstallmentPaymentList";
+import InstallmentPaymentListCredit from "../components/installment/InstallmentPaymentListCredit";
 import FinishButton from "../components/endProcess";
-import calculateProgressiveDiscount from "../utils/InstallmentPix";
+import ReInstallmentPix from "../utils/ReInstallmentPix";
+import { useState } from "react";
+import CostEffective from "../components/costEffective";
+
 
 export default function Page2() {
   const { amount, installment, deadline, cet, idTransaction } =
     useTransaction();
 
-  const transactionDetails = {
-    cet,
-    idTransaction,
-    process: "credit",
-    amount,
-    installment,
-  };
+  const [amountItem, setAmountItem] = useState<string>(amount);
+  const [installmentItem, setInstallmentItem] = useState<number>(installment-1);
 
   const headerPage = `João, pague o restante em ${installment - 1}x no cartão`;
 
-  const initialAmount = amount;
-  const totalMonths = installment;
   const monthlyDiscountRate = 0.0025;
 
   const AmountParse = parseFloat(amount.replace(".", ""));
   const AmountParseCET = parseFloat(cet.replace(".", ""));
-  console.log(AmountParse);
-
   const totalAmount = AmountParseCET - AmountParse;
-  console.log(totalAmount);
 
-  const month = 11;
-  const pixData = calculateProgressiveDiscount(
+  const pixData = ReInstallmentPix(
     totalAmount,
-    month,
+    installment - 1,
     monthlyDiscountRate
   );
 
@@ -48,15 +39,17 @@ export default function Page2() {
     idTransaction: string;
     process: string;
     amount: string;
-    installment: number;
+    installmentNumber: number;
+    installmentAmount: string;
   };
 
   const installmentDetails: InstallmentDetailsType = {
     cet,
     idTransaction,
     process: "credit",
-    amount,
-    installment,
+    amount: amount,
+    installmentNumber: installmentItem,
+    installmentAmount: amountItem,
   };
 
   return (
@@ -64,20 +57,27 @@ export default function Page2() {
       <Header />
       <HeaderDynamic header={headerPage}></HeaderDynamic>
       <PaymentForm
-        amount={amount}
-        installment={installment}
         pixData={pixData}
+        setAmountItem={setAmountItem}
+        setInstallmentItem={setInstallmentItem}
       />
-
       <PaymentDeadline deadline={deadline} />
-      <InstallmentPaymentList
-        installmentDetails={installmentDetails}
-      ></InstallmentPaymentList>
+      <div>
+  
+        <InstallmentPaymentListCredit
+          installmentDetails={installmentDetails}
+        ></InstallmentPaymentListCredit>
+        <CostEffective
+          amount={amount}
+          installment={installmentDetails.installmentNumber}
+          cet={cet}
+          idTransaction={idTransaction}
+        ></CostEffective>
+      </div>
       <div className="flex flex-row items-center gap-2 mb-2 mt-2">
         <PreviousButton />
         <FinishButton />
       </div>
-
       <Footer></Footer>
     </div>
   );

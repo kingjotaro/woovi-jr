@@ -1,4 +1,5 @@
-function ReInstallmentPix(
+
+  function ReInstallmentPix(
     initialAmount,
     actuallInstallment,
     monthlyDiscountRate
@@ -20,6 +21,7 @@ function ReInstallmentPix(
         if (counter <= actuallInstallment) {
           let simpleInterest = initialAmount * (monthlyDiscountRate * ( actuallInstallment- counter));
           let newAmount = initialAmount - simpleInterest;
+          let installment = newAmount / counter;
           currentAmount = newAmount;
         }
         if (counter > actuallInstallment) {
@@ -27,6 +29,7 @@ function ReInstallmentPix(
             initialAmount *
             (monthlyDiscountRate * (actuallInstallment - counter));
           let newAmount = initialAmount - simpleInterest;
+          let installment = newAmount / actuallInstallment;
           currentAmount = newAmount;
         }
       }
@@ -41,4 +44,14 @@ function ReInstallmentPix(
     return results;
   }
   
-  export default ReInstallmentPix;
+  let initialAmount = 23400;
+  let monthlyDiscountRate = 0.0025;
+  let actuallInstallment = 2;
+  
+  let test = ReInstallmentPix(
+    initialAmount,
+    actuallInstallment,
+    monthlyDiscountRate
+  );
+  console.log(test);
+  

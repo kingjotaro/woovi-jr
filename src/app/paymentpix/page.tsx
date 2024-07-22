@@ -7,8 +7,9 @@ import Qrcode from "./qrcode";
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
 import NextButton from "../components/nextButton";
-import InstallmentPaymentList from "../components/installment/InstallmentPaymentList";
+import InstallmentPaymentPix from "../components/installment/InstallmentPaymentPix";
 import FinishButton from "../components/endProcess";
+import CostEffective from "../components/costEffective";
 
 export default function Page2() {
   const { amount, installment, deadline, cet, idTransaction } =
@@ -24,15 +25,18 @@ export default function Page2() {
     idTransaction: string;
     process: string;
     amount: string;
-    installment: number;
+    installmentNumber: number;
+    installmentAmount: string;
   };
 
   const installmentDetails: InstallmentDetailsType = {
     cet,
     idTransaction,
-    process: "credit",
+    process: "pix",
     amount,
-    installment,
+    installmentNumber: installment,
+    installmentAmount: amount,
+
   };
 
   return (
@@ -43,9 +47,18 @@ export default function Page2() {
 
       <PaymentDeadline deadline={deadline} />
 
-      <InstallmentPaymentList
+      
+      <div>
+      <InstallmentPaymentPix
         installmentDetails={installmentDetails}
-      ></InstallmentPaymentList>
+      ></InstallmentPaymentPix>
+      <CostEffective
+        amount={amount}
+        installment={installmentDetails.installmentNumber}
+        cet={cet}
+        idTransaction={idTransaction}
+      ></CostEffective>
+      </div>
 
       <div className="flex flex-row items-center gap-2 mb-2 mt-2">
         <PreviousButton />

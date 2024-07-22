@@ -7,7 +7,7 @@ import FormVerifyDigit from "./formsComponents/formVerifyDigit";
 import FormCardNumber from "./formsComponents/formCardNumber";
 import FormInstallmentCredit from "./formsComponents/formInstallmentCredit";
 
-function PaymentForm({amount, installment, pixData}: any) {
+function PaymentForm({ pixData, setAmountItem, setInstallmentItem }: any) {
   const [formData, setFormData] = useState({
     name: "",
     cpf: "",
@@ -17,17 +17,18 @@ function PaymentForm({amount, installment, pixData}: any) {
     installments: "",
   });
 
-  const handleChange = (e: { target: { id: any; value: any; }; }) => {
+  console.log(pixData)
+
+  const handleChange = (e: { target: { id: any; value: any } }) => {
     const { id, value } = e.target;
     setFormData({ ...formData, [id]: value });
   };
 
-  const handleSubmit = (e: { preventDefault: () => void; }) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     isValidCPF(formData.cpf);
 
     e.preventDefault();
 
-    
     if (!formData.name.trim()) {
       alert("Por favor, preencha o nome completo.");
       return;
@@ -48,7 +49,6 @@ function PaymentForm({amount, installment, pixData}: any) {
       return;
     }
 
-  
     setFormData({
       name: "",
       cpf: "",
@@ -63,15 +63,30 @@ function PaymentForm({amount, installment, pixData}: any) {
     <div className="max-w-md mx-auto bg-white p-8 rounded-lg">
       <h2 className="text-2xl font-bold mb-6">Pagamento</h2>
       <form onSubmit={handleSubmit}>
-       <NameInput formDataName={formData.name} handleChange={handleChange}></NameInput>
-        <FormCPF formDataCPF={formData.cpf} handleChange={handleChange}></FormCPF>
-       <FormCardNumber formCardNumber={formData.cardNumber} handleChange={handleChange}></FormCardNumber>
+        <NameInput
+          formDataName={formData.name}
+          handleChange={handleChange}
+        ></NameInput>
+        <FormCPF
+          formDataCPF={formData.cpf}
+          handleChange={handleChange}
+        ></FormCPF>
+        <FormCardNumber
+          formCardNumber={formData.cardNumber}
+          handleChange={handleChange}
+        ></FormCardNumber>
         <div className="flex mb-4">
-        <FormExpirationCard formDataExpirationCard={formData.expiry} handleChange={handleChange}></FormExpirationCard>
-        <FormVerifyDigit formDataCVV={formData.cvv} handleChange={handleChange}></FormVerifyDigit>
+          <FormExpirationCard
+            formDataExpirationCard={formData.expiry}
+            handleChange={handleChange}
+          ></FormExpirationCard>
+          <FormVerifyDigit
+            formDataCVV={formData.cvv}
+            handleChange={handleChange}
+          ></FormVerifyDigit>
         </div>
-       
-      <FormInstallmentCredit pixData={pixData}></FormInstallmentCredit>
+
+        <FormInstallmentCredit pixData={pixData} setAmountItem={setAmountItem} setInstallmentItem={setInstallmentItem}></FormInstallmentCredit>
         <button
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"

@@ -3,14 +3,16 @@ import React, { useEffect, useState } from 'react';
 function InstallmentPaymentCredit({ installment, amount, process }: any) {
   const [isChecked, setIsChecked] = useState(process !== 'pix');
 
+
+
   useEffect(() => {
-    setIsChecked(process !== 'pix');
+    setIsChecked(process !== 'pix'); 
   }, [process]);
 
 
   return (
     <div>
-      {[...Array(installment - 1)].map((_, index) => (
+      {[...Array(installment)].map((_, index) => (
         <div
           key={index}
           className="flex items-center justify-between space-y-2"
@@ -31,3 +33,5 @@ function InstallmentPaymentCredit({ installment, amount, process }: any) {
 }
 
 export default InstallmentPaymentCredit;
+
+
