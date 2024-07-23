@@ -25,6 +25,7 @@ function InstallmentPaymentListCredit({
     installmentAmount,
     process,
   } = installmentDetails;
+
   return (
     <div>
       <div className="absolute left-[21px] top-10 bottom-6 w-0.5 bg-gray-300"></div>

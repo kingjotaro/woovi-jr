@@ -53,6 +53,8 @@ export default function Page2() {
         installmentDetails={installmentDetails}
       ></InstallmentPaymentPix>
       <CostEffective
+        installmentAmount={installmentDetails.installmentAmount}
+        process={'pix'}
         amount={amount}
         installment={installmentDetails.installmentNumber}
         cet={cet}

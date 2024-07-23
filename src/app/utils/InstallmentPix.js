@@ -1,8 +1,8 @@
 function InstallmentPix(initialAmount, monthlyDiscountRate) {
     const totalMonths = 12;
 
-    function formatNumber(numero) {
-        return numero.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    function formatNumber(number) {
+        return number.toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
     }
 
     let currentAmount = initialAmount;

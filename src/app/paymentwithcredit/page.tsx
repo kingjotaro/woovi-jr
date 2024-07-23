@@ -12,13 +12,14 @@ import ReInstallmentPix from "../utils/ReInstallmentPix";
 import { useState } from "react";
 import CostEffective from "../components/costEffective";
 
-
 export default function Page2() {
   const { amount, installment, deadline, cet, idTransaction } =
     useTransaction();
 
   const [amountItem, setAmountItem] = useState<string>(amount);
-  const [installmentItem, setInstallmentItem] = useState<number>(installment-1);
+  const [installmentItem, setInstallmentItem] = useState<number>(
+    installment - 1
+  );
 
   const headerPage = `João, pague o restante em ${installment - 1}x no cartão`;
 
@@ -60,14 +61,16 @@ export default function Page2() {
         pixData={pixData}
         setAmountItem={setAmountItem}
         setInstallmentItem={setInstallmentItem}
+        installment={installment - 2}
       />
       <PaymentDeadline deadline={deadline} />
       <div>
-  
         <InstallmentPaymentListCredit
           installmentDetails={installmentDetails}
         ></InstallmentPaymentListCredit>
         <CostEffective
+          installmentAmount={installmentDetails.installmentAmount}
+          process={"credit"}
           amount={amount}
           installment={installmentDetails.installmentNumber}
           cet={cet}

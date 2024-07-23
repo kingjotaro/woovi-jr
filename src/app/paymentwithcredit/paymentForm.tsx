@@ -7,7 +7,7 @@ import FormVerifyDigit from "./formsComponents/formVerifyDigit";
 import FormCardNumber from "./formsComponents/formCardNumber";
 import FormInstallmentCredit from "./formsComponents/formInstallmentCredit";
 
-function PaymentForm({ pixData, setAmountItem, setInstallmentItem }: any) {
+function PaymentForm({ pixData, setAmountItem, setInstallmentItem, installment }: any) {
   const [formData, setFormData] = useState({
     name: "",
     cpf: "",
@@ -86,7 +86,7 @@ function PaymentForm({ pixData, setAmountItem, setInstallmentItem }: any) {
           ></FormVerifyDigit>
         </div>
 
-        <FormInstallmentCredit pixData={pixData} setAmountItem={setAmountItem} setInstallmentItem={setInstallmentItem}></FormInstallmentCredit>
+        <FormInstallmentCredit pixData={pixData} setAmountItem={setAmountItem} setInstallmentItem={setInstallmentItem} numberInstallment={installment}></FormInstallmentCredit>
         <button
           type="submit"
           className="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
