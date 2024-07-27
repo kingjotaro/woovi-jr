@@ -17,7 +17,6 @@ function PaymentForm({ pixData, setAmountItem, setInstallmentItem, installment }
     installments: "",
   });
 
-  console.log(pixData)
 
   const handleChange = (e: { target: { id: any; value: any } }) => {
     const { id, value } = e.target;

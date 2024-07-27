@@ -2,7 +2,7 @@ import NextButton from "../components/nextButton";
 import getTransactionId64 from '../utils/getFormatedDate'
 
 
-function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, installment }: {
+function Installment({ title, amount, cet, isSelected, onClick, index, totalItems, installment }: {
 
   title: string,
   amount: string,
@@ -57,4 +57,4 @@ function PixItem({ title, amount, cet, isSelected, onClick, index, totalItems, i
     </div>);
 }
 
-export default PixItem;
+export default Installment;

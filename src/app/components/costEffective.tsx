@@ -40,7 +40,7 @@ function costEffective({
       : installment === 1
       ? 0
       : 0.25 * (installment - 1);
-  console.log(process);
+
 
   const formattedCET = cetValue.toFixed(2).replace(".", ",");
   const CET =

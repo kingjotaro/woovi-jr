@@ -20,7 +20,6 @@ function InstallmentPaymentPix({ installmentDetails }: InstallmentPaymentListPro
 
   const { amount,  installmentNumber, installmentAmount, process } = installmentDetails;
   return (
-    <div>
       <div className="relative flex flex-col space-y-2 p-4 border rounded-t-lg">
         {installmentNumber === 1 ? (
            <UniquePix amount={amount}></UniquePix>
@@ -37,8 +36,6 @@ function InstallmentPaymentPix({ installmentDetails }: InstallmentPaymentListPro
           </>
         )}
       </div>
-      
-    </div>
   );
 }
 
