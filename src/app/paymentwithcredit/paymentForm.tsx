@@ -60,7 +60,6 @@ function PaymentForm({ pixData, setAmountItem, setInstallmentItem, installment }
 
   return (
     <div className="max-w-md mx-auto bg-white p-8 rounded-lg">
-      <h2 className="text-2xl font-bold mb-6">Pagamento</h2>
       <form onSubmit={handleSubmit}>
         <NameInput
           formDataName={formData.name}

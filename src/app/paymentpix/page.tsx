@@ -6,7 +6,7 @@ import PreviousButton from "../components/previousButton";
 import Qrcode from "./qrcode";
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
-import NextButton from "../components/nextButton";
+import NextButton from "../components/nextButtons/NextButton";
 import InstallmentPaymentPix from "../components/installment/InstallmentPaymentPix";
 import FinishButton from "../components/endProcess";
 import CostEffective from "../components/costEffective";

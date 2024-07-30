@@ -24,8 +24,7 @@ const Template: Story = {
     return (
       <PaymentModal
         {...args}
-        paymentAmount={paymentAmount}
-        setPaymentAmount={setPaymentAmount}
+       
       />
     );
   },
@@ -35,7 +34,7 @@ export const Default: Story = {
   ...Template,
   args: {
     isOpen: true,
-    paymentAmount: '10000',
+    paymentAmount: "1000000",
     
   },
 };

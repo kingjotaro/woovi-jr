@@ -1,4 +1,4 @@
-import NextButton from "../components/nextButton";
+import NextButton from "../components/nextButtons/NextButton";
 import getTransactionId64 from '../utils/getFormatedDate'
 
 

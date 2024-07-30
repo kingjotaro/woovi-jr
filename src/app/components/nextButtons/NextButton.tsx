@@ -1,32 +1,21 @@
 import React from 'react';
 import { usePathname, useRouter } from 'next/navigation';
-import { useTransaction } from '../pixcontext';
-import {generatePaymentDeadline} from '../utils/deadline'
+import { useTransaction } from '../../pixcontext';
+import {generatePaymentDeadline} from '../../utils/deadline'
+import { NextButtonProps } from './typesNextButton';
 
 
-function nextButton({ isVisible, amount, installment, cet, idTransaction}:  {
-  isVisible: boolean,
-  amount: string,
-  installment: number,
-  cet: string
-  idTransaction: string
-} ) {
+function NextButton({ isVisible, amount, installment, cet, idTransaction}: NextButtonProps ) {
 
   const deadline = generatePaymentDeadline()
-
   const { setAmount, setInstallment, setDeadline, setCet, setIdTransaction  } = useTransaction();
-
- 
-
-
   const router = useRouter();
 
   const pathname = usePathname()
 
   function next() {
     if (pathname === "/") {
-      router.push('/paymentpix',
-        
+      router.push('/paymentpix',        
       );
       
     }
@@ -51,4 +40,4 @@ function nextButton({ isVisible, amount, installment, cet, idTransaction}:  {
     )
   );
 }
-export default nextButton
+export default NextButton

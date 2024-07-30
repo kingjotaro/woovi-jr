@@ -1,4 +1,4 @@
-import Installment from "./Installment";
+import Installment from "./Installment/Installment";
 import calculateProgressiveDiscount from "../utils/InstallmentPix";
 import Pix from "./pix";
 import { useState } from "react";
