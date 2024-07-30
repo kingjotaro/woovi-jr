@@ -8,15 +8,10 @@ import PaymentModal from "./PaymentModal/PaymentModal";
 
 export default function Index() {
   const [isModalOpen, setIsModalOpen] = useState(true);
-  const [paymentAmount, setPaymentAmount] = useState('');
-
+  const [paymentAmount, setPaymentAmount] = useState('200');
 
   const handleModalClose = () => {
     setIsModalOpen(false);
-  };
-
-  const handlePaymentSubmit = (amount: number) => {
-    setPaymentAmount(amount.toString());
   };
 
   const headerPage = "João como você deseja pagar?";
@@ -27,7 +22,6 @@ export default function Index() {
         <PaymentModal
           isOpen={isModalOpen}
           onClose={handleModalClose}
-          onSubmit={handlePaymentSubmit}
           paymentAmount={paymentAmount}
           setPaymentAmount={setPaymentAmount}
         />

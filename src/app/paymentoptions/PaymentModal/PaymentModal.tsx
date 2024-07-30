@@ -1,3 +1,4 @@
+import React from 'react';
 import Header from "../../components/header";
 
 function formatValue(value: string) {
@@ -9,10 +10,9 @@ function formatValue(value: string) {
   return `R$ ${formattedValue}`;
 }
 
-interface PaymentModalProps {
+export interface PaymentModalProps {
   isOpen: boolean;
   onClose: () => void;
-  onSubmit: (amount: number) => void;
   setPaymentAmount: React.Dispatch<React.SetStateAction<string>>;
   paymentAmount: string;
 }
@@ -20,14 +20,22 @@ interface PaymentModalProps {
 export default function PaymentModal({
   isOpen,
   onClose,
-  onSubmit,
   setPaymentAmount,
   paymentAmount
 }: PaymentModalProps) {
 
   function handleSubmit() {
-      onClose();
-  };
+
+    const amount = parseFloat(paymentAmount.replace(/\D/g, ''));
+
+
+    if (amount <= 199) {
+      alert('O valor minimo de pagamento é de R$ 2,00');
+      return;
+    }
+
+    onClose();
+  }
 
   if (!isOpen) return null;
 
