@@ -1,17 +1,9 @@
-import NextButton from "../components/nextButtons/NextButton";
-import getTransactionId64 from '../utils/getFormatedDate'
+import NextButton from "../../components/nextButtons/NextButton";
+import getTransactionId64 from '../../utils/getFormatedDate'
+import { PixProps } from "./typePix";
 
 
-function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, cet }: {
-  title: string,
-  amount: string,
-  cashback: string,
-  cashbackAmount: string,
-  isSelected: boolean;
-  onClick: () => void;
-  cet: string
-
-}) {
+function Pix({ title, amount, cashback, cashbackAmount, isSelected, onClick, cet }: PixProps) {
 
   let id = getTransactionId64()
 

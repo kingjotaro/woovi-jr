@@ -3,7 +3,7 @@ import { useState } from "react";
 import Footer from "../components/footer";
 import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
-import InstallmentList from "./InstallmentList";
+import InstallmentList from "./InstallmentList/InstallmentList";
 import PaymentModal from "./PaymentModal/PaymentModal";
 
 export default function Index() {

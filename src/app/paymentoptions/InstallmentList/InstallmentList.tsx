@@ -1,6 +1,6 @@
-import Installment from "./Installment/Installment";
-import calculateProgressiveDiscount from "../utils/InstallmentPix";
-import Pix from "./pix";
+import Installment from "../Installment/Installment";
+import calculateProgressiveDiscount from "../../utils/InstallmentPix";
+import Pix from "../Pix/pix";
 import { useState } from "react";
 
 function unformatValue(value: string): number {

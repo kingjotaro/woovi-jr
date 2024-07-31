@@ -32,10 +32,6 @@ type Story = StoryObj<typeof Installment>;
 
 const Template: Story = {
   render: (args) => {
-
-
-  
-
     return (
       <Installment
         {...args}
@@ -50,7 +46,7 @@ export const Default: Story = {
     title: 'A vista ',
     amount: "100,000",
     cet: "120,000",
-    isSelected: true,
+    isSelected: false,
     index: 2,
     totalItems: 3,
     installment: 1,
@@ -67,18 +63,5 @@ export const Selected: Story = {
     index: 1,
     totalItems: 3,
     installment: 2,
-  },
-};
-
-export const CustomData: Story = {
-  ...Template,
-  args: {
-    title: 'Special Installment',
-    amount: '200,00',
-    cet: '250,00',
-    isSelected: false,
-    index: 2,
-    totalItems: 5,
-    installment: 3,
   },
 };
