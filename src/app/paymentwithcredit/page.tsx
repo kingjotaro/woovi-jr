@@ -21,7 +21,7 @@ export default function Page2() {
     installment - 1
   );
 
-  const headerPage = `João, pague o restante em ${installment - 1}x no cartão`;
+  const headerPage = `João, pague o restante em ${installmentItem }x no cartão`;
 
   const monthlyDiscountRate = 0.0025;
 
