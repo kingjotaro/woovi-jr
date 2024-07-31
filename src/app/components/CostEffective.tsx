@@ -76,7 +76,7 @@ function CostEffective({
           {isOpen && (
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/86yn-7_hhfY?start=2"
+              src="https://www.youtube.com/watch?v=ah12G4n3ZZU&ab_channel=Woovi"
               title="YouTube video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
