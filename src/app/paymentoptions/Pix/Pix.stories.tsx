@@ -4,7 +4,7 @@ import { TransactionProvider } from '../../pixcontext';
 import Pix from './Pix';
 
 const meta: Meta<typeof Pix> = {
-  title: 'Components/Pix',
+  title: 'Payment Options/Pix',
   component: Pix,
   decorators: [
     (Story) => (

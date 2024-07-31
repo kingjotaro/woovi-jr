@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from "../../components/header";
+import { PaymentModalProps } from './typesPaymentModal';
 
 function formatValue(value: string) {
   const cleanedValue = value.replace(/\D/g, '');
@@ -10,12 +11,7 @@ function formatValue(value: string) {
   return `R$ ${formattedValue}`;
 }
 
-export interface PaymentModalProps {
-  isOpen: boolean;
-  onClose: () => void;
-  setPaymentAmount: React.Dispatch<React.SetStateAction<string>>;
-  paymentAmount: string;
-}
+
 
 export default function PaymentModal({
   isOpen,

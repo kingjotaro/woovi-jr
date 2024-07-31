@@ -5,7 +5,7 @@ import { TransactionProvider } from '../../pixcontext';
 
 
 const meta: Meta<typeof Installment> = {
-  title: 'Components/Installment',
+    title: 'Payment Options/Installment',
   component: Installment,
   decorators: [
     (Story) => (

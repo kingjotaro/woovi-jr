@@ -7,10 +7,10 @@ import PreviousButton from "../components/previousButton";
 import { useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
 import InstallmentPaymentListCredit from "../components/installment/InstallmentPaymentListCredit";
-import FinishButton from "../components/endProcess";
+import FinishButton from "../paymentpix/FinishPaymentPix";
 import ReInstallmentPix from "../utils/ReInstallmentPix";
 import { useState } from "react";
-import CostEffective from "../components/costEffective";
+import CostEffective from "../components/CostEffective";
 
 export default function Page2() {
   const { amount, installment, deadline, cet, idTransaction } =

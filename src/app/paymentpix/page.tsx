@@ -4,12 +4,12 @@ import Header from "../components/header";
 import HeaderDynamic from "../components/headerDynamic";
 import PreviousButton from "../components/previousButton";
 import Qrcode from "./qrcode";
-import { useTransaction } from "../pixcontext";
+import { TransactionProvider, useTransaction } from "../pixcontext";
 import PaymentDeadline from "../components/PaymentDeadline";
 import NextButton from "../components/nextButtons/NextButton";
 import InstallmentPaymentPix from "../components/installment/InstallmentPaymentPix";
-import FinishButton from "../components/endProcess";
-import CostEffective from "../components/costEffective";
+import FinishButton from "./FinishPaymentPix";
+import CostEffective from "../components/CostEffective";
 
 export default function Page2() {
   const { amount, installment, deadline, cet, idTransaction } =
@@ -40,6 +40,9 @@ export default function Page2() {
   };
 
   return (
+   
+    
+ 
     <div className="flex min-h-screen flex-col items-center justify-between  min-w-screen">
       <Header></Header>
       <HeaderDynamic header={header}></HeaderDynamic>
@@ -79,5 +82,6 @@ export default function Page2() {
 
       <Footer></Footer>
     </div>
+   
   );
 }

@@ -7,7 +7,7 @@ function formatNumber(number: number) {
   });
 }
 
-function costEffective({
+function CostEffective({
   installment,
   cet,
   idTransaction,
@@ -92,4 +92,4 @@ function costEffective({
   );
 }
 
-export default costEffective;
+export default CostEffective;

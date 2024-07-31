@@ -1,3 +1,4 @@
+'use client';
 import { TransactionProvider } from './pixcontext';
 import './globals.css';
 

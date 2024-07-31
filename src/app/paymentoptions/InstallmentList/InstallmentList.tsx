@@ -1,17 +1,14 @@
 import Installment from "../Installment/Installment";
 import calculateProgressiveDiscount from "../../utils/InstallmentPix";
-import Pix from "../Pix/pix";
+import Pix from'../Pix/Pix';
 import { useState } from "react";
 
 function unformatValue(value: string): number {
-    // Remove 'R$', espaços e pontos
     const cleanedValue = value
       .replace('R$', '')        
       .replace(/\s/g, '')       
       .replace(/\./g, '')      
       .replace(',', '');   
-  
-    // Converte a string limpa em um número
     return parseFloat(cleanedValue);
   }
 

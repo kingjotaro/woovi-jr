@@ -1,14 +1,12 @@
 import React, { useState } from 'react';
-import ModalPayment from './modalPayment';
-import { usePathname, useRouter } from 'next/navigation';
+import ModalProcessPayment from './ModalProcessPayment';
+import { useRouter } from 'next/navigation';
 
 function FinishButton() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   
   const router = useRouter();
-
-  const pathname = usePathname()
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => {
@@ -26,7 +24,7 @@ function FinishButton() {
         Finalizar 
       </button>
 
-      <ModalPayment isOpen={isModalOpen} onClose={closeModal} />
+      <ModalProcessPayment isOpen={isModalOpen} onClose={closeModal}></ModalProcessPayment>
     </div>
   );
 };

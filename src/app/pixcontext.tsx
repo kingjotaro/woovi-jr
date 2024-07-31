@@ -17,11 +17,11 @@ interface TransactionContextProps {
 const TransactionContext = createContext<TransactionContextProps | undefined>(undefined);
 
 export const TransactionProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [amount, setAmount] = useState<string>('');
-  const [installment, setInstallment] = useState<number>(0);
-  const [deadline, setDeadline] = useState<string>('')
-  const [cet, setCet] = useState<string>('')
-  const [idTransaction, setIdTransaction] = useState<string>('')
+  const [amount, setAmount] = useState<string>('0');
+  const [installment, setInstallment] = useState<number>(1);
+  const [deadline, setDeadline] = useState<string>('0')
+  const [cet, setCet] = useState<string>('0')
+  const [idTransaction, setIdTransaction] = useState<string>('0')
 
   return (
     <TransactionContext.Provider value={{ amount, installment, setAmount, setInstallment, deadline, setDeadline, cet, setCet, idTransaction, setIdTransaction }}>

@@ -3,7 +3,7 @@ import type { Meta, StoryObj } from '@storybook/react';
 import PaymentModal from './PaymentModal';
 
 const meta: Meta<typeof PaymentModal> = {
-  title: 'Components/PaymentModal',
+  title: 'Payment Options/PaymentModal',
   component: PaymentModal,
   argTypes: {
     isOpen: { control: 'boolean' },

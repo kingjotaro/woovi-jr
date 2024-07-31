@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import HeaderWoovi from './header';
+import HeaderWoovi from '../components/header';
 
-function ModalPayment({ isOpen, onClose }: any) {
+function ModalProcessPayment({ isOpen, onClose }: any) {
   const [isProcessing, setIsProcessing] = useState(true);
 
   useEffect(() => {
@@ -42,4 +42,4 @@ function ModalPayment({ isOpen, onClose }: any) {
   );
 };
 
-export default ModalPayment;
+export default ModalProcessPayment;
